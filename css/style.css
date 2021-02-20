@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    background: rgb(0, 34, 0);
+    color: crimson;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#title,
+.desc,
+#weapon,
+#container-game,
+#container-button,
+#end-desc,
+#retry-button {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}  
+#title {
+    font-size: 80px;
+    margin-bottom: 0px;
+}
+.desc {
+    font-size: 30px;
+}
+#weapon {
+    opacity: 0;
+    margin: 20px 0 80px 0;
+    font-size: 40px;
+    transform: translateY(-150px);
+}
+#container-btn {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    margin: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+.button img {
+    width: 130px;
+}
