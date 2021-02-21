@@ -2,13 +2,37 @@
 <html lang="en">
 
 <head>
-    
+    <title>Suit Indo</title>
+    <meta charset="UTF-8"/>
 </head>
 
 <body>
-
     <script>
-        
+        const suitArray = [
+            'akik',
+            'prasasti',
+            'keris'
+        ];
+
+        function computerPlay() {
+            return suitArray[~~(Math.random()*myArray.length)]
+        }
+
+        let computerSelection;
+        let playerSelection;
+        let computerScore;
+        let playerScore;
+
+        game();
+
+        function game() {
+            computerScore=0;
+            playerScore=0;
+
+            for (let i=0; i<5; i++) {
+                onUserInput();
+            }
+        }
 
     </script>
 </body>
