@@ -44,3 +44,146 @@ body {
 .button img {
     width: 130px;
 }
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px 2px;
+}
+#skor-label,
+#skor-container {
+    display: flex;
+    justify-content: center;
+}
+.label {
+    font-size: 40px;
+    margin-top: 25px;
+    padding: 0 50px;
+}
+.score {
+    font-size: 75px;
+    padding: 0px 50px;
+}
+#hasil-kontainer {
+    margin-top: 60px;
+    text-align: center;
+    opacity: 0;
+    transition: all 2s ease;
+}
+#peringatan-berakhir {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#end-desc {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+#retry-btn {
+    display: inline-block;
+    padding: 0.8em 1.4em;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #646464;
+    background-color: rgb(245, 245, 245);
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    position: relative;
+    margin-top: 25px;
+    opacity: 0;
+}
+#retry-btn:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+#peringatan-berakhir.dissapear,
+dissapear {
+    display: none;
+}
+#game-container {
+    opacity: 0;
+    pointer-events: none;
+}
+span {
+    opacity: 0;
+    transition: all 1s ease;
+}
+.fade {
+    opacity: 1;
+}
+#peringatan-berakhir.no-transition{
+    transition: none;
+}
+#desc1.fade-out,
+#desc2.fade-out,
+#desc3.fade-out,
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+    from {
+      opacity: 1;
+}
+    to {
+      opacity: 0;
+    }
+}
+#desc1.skip-anime,
+#desc3.skip-anime,
+#desc3.skip-anime {
+    animation: fade-out;
+    animation-duration: 0;
+}
+
+#weapon.drop-down {
+    animation-name: drop-down;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.58, 0.3, 0.49, 1.39);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes drop-down {
+    from {
+      opacity: 0;
+      transform: translateY(-150px);
+      pointer-events: none;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+      pointer-events: all;
+    }
+}
+#retry-btn.fade-in {
+    animation-name: fade-in;
+    animation-duration: 00ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#container-game.fade-in {
+    animation-name: fade-in;
+    animation-duration: 00ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-in {
+    from {
+      opacity: 0;
+      pointer-events: none;
+    }
+    to {
+      opacity: 1;
+      pointer-events: all;
+    }
+}
+  span.skip {
+    transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
+}
