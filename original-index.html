@@ -32,6 +32,52 @@
             for (let i=0; i<5; i++) {
                 onUserInput();
             }
+            console.log(declareWinner());
+
+            function declareWinner() {
+                if (playerScore===computerScore) {
+                    alert(playerScore + '-' + computerScore + '\nTie game!');
+                    return playerScore + '-' + computerScore + '\nTie game!';
+                } else if (playerScore>computerScore){
+                    alert(playerScore + '-' + computerScore + '\nYou win!!');
+                    return playerScore + '-' + computerScore + '\nYou win!!';
+                } else {
+                    alert(playerScore + '-' + computerScore + '\nYou lost. Better luck next time!');
+                    return playerScore + '-' + computerScore + '\nYou lost. Better luck next time!';
+                }
+            }
+        }
+
+        function onUserInput() {
+            playerSelection = prompt('akik, prasasti, or keris?', '');
+            if  ((playerSelection.toLowerCase()=='akik')
+                ||(playerSelection.toLowerCase()=='prasasti')
+                ||(playerSelection.toLowerCase()=='keris')) { 
+            console.log(playRound(playerSelection,computerSelection));
+            } else {
+                alert('Itu\'s bukan pilihan yang tepat.');
+                onUserInput();
+            } 
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            computerSelection = computerPlay().toLowerCase();
+            playerSelection = playerSelection().toLowerCase();
+            if (computerSelection==playerSelection) {
+                alert('Game Seri !');
+                return 'Tie game\nComputer Score: ' + 
+                      computerScore + '\nYour Score: ' + playerScore;
+          } else if ((computerSelection=='rock' && playerSelection=='scissors') 
+                    || (computerSelection=='scissors' && playerSelection=='paper') 
+                    || (computerSelection=='paper' && playerSelection=='rock')) {
+              alert('Kamu Kalah! ' + computerSelection + ' beats ' + playerSelection);
+              return 'Computer Score: ' + ++computerScore + 
+                      '\nYour Score: ' + playerScore;
+          } else {
+              alert('Kamu Menang! ' + playerSelection + ' beats ' + computerSelection);
+              return 'Your Score: ' + ++playerScore + 
+                      '\nComputer Score: ' + computerScore;
+          }
         }
 
     </script>
